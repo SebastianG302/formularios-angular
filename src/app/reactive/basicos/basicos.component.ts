@@ -17,8 +17,8 @@ export class BasicosComponent implements OnInit {
 
   miFormulario: FormGroup = this.fb.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],
-    precio: [0, [Validators.required, Validators.min(0)]],
-    existencias: [0, [Validators.required, Validators.min(0)]]
+    precio: [, [Validators.required, Validators.min(0)]],
+    existencias: [, [Validators.required, Validators.min(0)]]
   })
 
   constructor(private fb: FormBuilder) { }
@@ -29,6 +29,16 @@ export class BasicosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  guardar(){
+    if(this.miFormulario.invalid){
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
+    console.log(this.miFormulario.value);
+    this.miFormulario.reset();
+    
   }
 
 }
