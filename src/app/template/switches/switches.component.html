@@ -1,1 +1,44 @@
-<p>switches works!</p>
+<h2>Template: Switches</h2>
+<hr>
+<form #miFormulario="ngForm">
+    <div class="form-check">
+        <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault1">
+        <label
+            class="form-check-label"
+            for="flexRadioDefault1">
+            Default radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+            >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Default checked radio
+        </label>
+      </div>
+
+      <div class="form-check form-switch mt-2">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Quiero recibir notificaciones</label>
+      </div>
+      <hr>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Acepto Terminos y condiciones
+        </label>
+      </div>
+
+      <button class="btn btn-primary mt-3">
+        Guardar
+      </button>
+</form>
