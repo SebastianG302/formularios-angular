@@ -1,1 +1,46 @@
-<p>dinamicos works!</p>
+<h2>Reactive - Dinámicos</h2>
+<hr>
+<form autocomplete="off">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="Nombre de la persona">
+        <div id="emailHelp" class="form-text text-danger">
+            Debe tener al menos 3 letras.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Agregar</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Juego favorito">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">
+            Favoritos
+        </label>
+        
+        <!-- <div class="input-group mb-3" *ngFor="let juego of persona.favoritos; let i = index">
+            <input  class="mb-1" type="text" class="form-control"
+                 >
+            <button class="btn btn-outline-danger" type="button" id="button-addon2" (click)="eliminar(i)">
+                Eliminar
+            </button>
+        </div> -->
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end"
+                type="button">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- <pre>{{miFormulario.value | json}}
+</pre> -->

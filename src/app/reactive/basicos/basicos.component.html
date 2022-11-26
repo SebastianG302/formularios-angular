@@ -1,1 +1,80 @@
-<p>basicos works!</p>
+<h2>Reactive - Básicos</h2>
+<hr>
+<div class="row">
+    <div class="col">
+
+        <form autocomplete="off" [formGroup]="miFormulario">
+            <!-- INPUT PRODUCTO -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Producto</label>
+                
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Nombre del producto"
+                    formControlName="nombre">
+
+                <div *ngIf="campoNoEsValido('nombre')" id="emailHelp" class="form-text text-danger">
+                    Debe tener al menos 3 letras.
+                </div>
+            </div>
+
+            <!-- *******INPUT PRECIO******* -->
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">
+                    Precio
+                </label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Precio unitario del producto"
+                    formControlName="precio">
+
+                <div *ngIf="campoNoEsValido('precio')" id="emailHelp" class="form-text text-danger" min="0">
+                    La cantidad debe ser igual o mayor a 0.
+                </div>
+            </div>
+            <!-- *******INPUT EXISTENCIAS******* -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Existencias</label>
+                
+                <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Existencias del producto"
+                    formControlName="existencias">
+                    
+                <div *ngIf="campoNoEsValido('precio')" id="emailHelp" class="form-text text-danger" min="0">
+                    Las existencias debe ser igual o mayor a 0.
+                </div>
+            </div>
+            <!-- *******BOTÓN******* -->
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary float-end" [disabled]="miFormulario.invalid" type="submit">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{miFormulario.valid}}</pre>
+
+        <span>Prisitne</span>
+        <pre>{{miFormulario.pristine}}</pre>
+
+
+        <span>Touched</span>
+        <pre>{{miFormulario.touched}}</pre>
+
+        <span>Value</span>
+        <pre>{{miFormulario.value | json}}</pre>
+    </div>
+</div> 
